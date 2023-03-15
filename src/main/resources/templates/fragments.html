@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragments</title>
+</head>
+<body>
+<header th:fragment="common-header">
+  <h1 class="fst-italic">Witam na stronie z lista zadan</h1>
+  <img src="../static/images/logo.png" class="rounded mx-auto d-block" width="400" alt="company logo" th:src="@{/images/logo.png}">
+</header>
+<footer th:fragment="common-footer">
+  <div class="mb-3">
+    <a th:href="@{/}">Strona glowna</a>
+  </div>
+</footer>
+</body>
+</html>

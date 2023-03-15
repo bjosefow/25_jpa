@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<main layout:fragment="content">
+    <h2 class="fst-italic">Menu:</h2>
+    <a class="fst-italic" th:href="@{/to-do-list}">wyswietl liste zadan do wykonania</a> <br>
+    <a class="fst-italic" th:href="@{/add-new-task}">dodaj nowe zadanie</a> <br>
+    <a class="fst-italic" th:href="@{/archives}">pokaz liste wykonanych zadan</a> <br>
+</main>
+</html>

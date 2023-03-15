@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<main layout:fragment="content">
+  <div th:unless="${toDoList.isEmpty()}">
+    <h2 class="fst-italic">Lista zadan do wykonania</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Kategoria</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody class="table-group-divider" th:each="task : ${toDoList}">
+      <tr>
+        <th scope="row" th:text="${task.id}"></th>
+        <td th:text="${task.name}"></td>
+        <td th:text="${task.deadline}"></td>
+        <td th:text="${task.category.description}"></td>
+        <td>
+          <a class="fst-italic" th:href="@{|/update/${task.id}|}" th:text="Zrobione"></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <img src="../static/images/motivation.png" class="rounded mx-auto d-block" width="400" alt="motivation logo" th:src="@{/images/motivation.png}">
+  </div>
+  <div th:if="${toDoList.isEmpty()}">
+    <h2 class="fst-italic">Lista zadan do wykonania jest pusta</h2>
+  </div>
+</main>
+</html>
+

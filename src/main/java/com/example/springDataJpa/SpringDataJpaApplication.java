@@ -1,4 +1,4 @@
-package com.example.spring_data_jpa;
+package com.example.springDataJpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
