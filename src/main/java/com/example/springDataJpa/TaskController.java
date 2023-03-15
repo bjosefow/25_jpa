@@ -22,16 +22,15 @@ public class TaskController {
         return "home";
     }
 
-    @GetMapping("/toDoList")
+    @GetMapping("/to-do-list")
     public String showToDoList(Model model) {
         List<Task> toDoTaskList = taskRepository.findByDoneIsFalse();
         model.addAttribute("toDoList", toDoTaskList);
         return "toDoList";
     }
 
-    @GetMapping("/addNewTaskForm")
+    @GetMapping("/add-new-task")
     public String addNewTask(Model model) {
-        List<Task> toDoTaskList = taskRepository.findByDoneIsFalse();
         model.addAttribute("newTask", new Task());
         return "addNewTask";
     }
@@ -39,7 +38,7 @@ public class TaskController {
     @PostMapping("/add")
     public String addTask(Task task) {
         taskRepository.save(task);
-        return "redirect:/toDoList";
+        return "redirect:/to-do-list";
     }
 
     @GetMapping("/archives")
@@ -52,7 +51,7 @@ public class TaskController {
     @GetMapping("/update/{id}")
     public String updateStatus(@PathVariable Long id) {
         taskRepository.checkTaskAsDone(id);
-        return "redirect:/toDoList";
+        return "redirect:/to-do-list";
     }
 
 }

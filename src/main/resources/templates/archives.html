@@ -19,11 +19,11 @@
       <th scope="row" th:text="${task.id}"></th>
       <td th:text="${task.name}"></td>
       <td th:text="${task.deadline}"></td>
-      <td th:text="${task.category}"></td>
+      <td th:text="${task.category.description}"></td>
     </tr>
     </tbody>
   </table>
-  <img src="../static/images/done.png" class="rounded mx-auto d-block" width="400" alt="done picture" th:src="@{/images/done.png}">
+  <img class="rounded mx-auto d-block" width="400" alt="done picture" th:src="@{/images/done.png}">
 </div>
 <p th:if="${doneTasks.isEmpty()}">Lista wykonanych zadan jest pusta</p>
 </main>

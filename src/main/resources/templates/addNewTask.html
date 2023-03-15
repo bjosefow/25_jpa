@@ -3,21 +3,21 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <main layout:fragment="content">
-  <form method="post" action="/add" th:object="${newTask}">
+  <form method="post" th:action="@{/add}" th:object="${newTask}">
     <div class="mb-3">
       <label for="taskName" class="form-label">Nazwa zadania:</label>
       <input type="text" th:field="*{name}" id="taskName">
     </div>
     <div class="mb-3">
       <label for="deadline" class="form-label">Deadline:</label>
-      <input type="Date" th:field="*{deadline}" id="deadline">
+      <input type="date" th:field="*{deadline}" id="deadline">
     </div>
     <div class="mb-3">
       <label for="category" class="form-label">Kategoria:</label>
       <select th:field="*{category}" id="category">
-        <option th:text="OBOWIAZKI_DOMOWE" value="OBOWIAZKI_DOMOWE"></option>
-        <option th:text="PRACA" value="PRACA"></option>
-        <option th:text="SZKOLENIE" value="SZKOLENIE"></option>
+        <option th:text="|obowiazki domowe|" value="HOUSEHOLD"></option>
+        <option th:text="praca" value="WORK"></option>
+        <option th:text="szkolenie" value="TRAINING"></option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Dodaj zadanie</button>
